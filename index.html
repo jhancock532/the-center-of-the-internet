@@ -1,0 +1,86 @@
+<!--
+This site links to 97.9% of the most popular 10 million
+websites in the world and then countless others. 
+Some sites don't exist yet, and some might never exist.
+You never need to use Google again; whatever you are 
+searching for, you can link to it here.
+
+Inspired by Borges's Library of Babel,
+And its web equivialant, https://libraryofbabel.info/
+-->
+
+<div id="wrapper">
+  <div id="link-container">
+  </div>
+</div>
+
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+#wrapper {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  background: blue;
+  height: 100%;
+}
+
+#link-container {
+  background: ghostwhite;
+  width: calc(100vw - 120px);
+  height: calc(100vh - 120px);
+  justify-self: center;
+  align-self: center;
+  overflow-y: scroll;
+  padding: 20px;
+}
+
+#link-container::before {
+  content: '';
+  position: fixed;
+  width: calc(100vw - 80px);
+  height: 80px;
+  background: linear-gradient(ghostwhite 20%, transparent);
+  top: 40px;
+  left: 40px;
+}
+
+#link-container::after {
+  content: '';
+  position: fixed;
+  width: calc(100vw - 80px);
+  height: 80px;
+  background: linear-gradient(transparent, ghostwhite 80%);
+  bottom: 40px;
+  left: 40px;
+}
+
+@media (min-width: 720px) {
+  #link-container {
+    width: 640px;
+  }
+  
+  #link-container::after {
+    width: 680px;
+    left: calc(50% - 340px);
+  }
+  
+  #link-container::before {
+    width: 680px;
+    left: calc(50% - 340px);
+  }
+}
+
+.link {
+  padding-bottom: 5px;
+  padding-top: 15px;
+}
+</style>
+
+<!--
+It reminds me a little of the countless dead links of old net art archives,
+http://www.flong.com/archive/texts/lists/grether_list/index.html
+-->
